@@ -37,52 +37,74 @@ const CountryInfoCard = ({
         }
         setBordersArray();
     }, []);
+
     return (
-        <C.MainConteiner darkMode={darkMode} className="animeBottom">
-            <C.Flag darkMode={darkMode} background={background}></C.Flag>
-            <C.InfoContent>
-                <h4>{countryName}</h4>
-                <C.DataList>
-                    <ul>
-                        <ListItem listItem={"Native name"} value={nativeName} />
-                        <ListItem listItem={"Population"} value={population} />
-                        <ListItem listItem={"Region"} value={region} />
-                        <ListItem listItem={"Sub Region"} value={subregion} />
-                        <ListItem listItem={"Capital"} value={capital} />
-                    </ul>
-                    <ul>
-                        <ListItem listItem={"Top Level Domain"} value={tld} />
-                        <ListItem
-                            listItem={"Currencies"}
-                            value={currenciesString}
-                        />
-                        <ListItem listItem={"Languages"} value={languages} />
-                    </ul>
-                </C.DataList>
-                <C.BorderCountriesList>
-                    <span>
-                        <b>
-                            <span className="span_block">
-                                Border Countries:{" "}
-                            </span>
-                            {bordersCountries.length
-                                ? bordersCountries.map((e, i) => (
-                                      <C.BordersButton
-                                          onClick={() =>
-                                              navigate(`/country/${borders[i]}`)
-                                          }
-                                          key={i}
-                                          darkMode={darkMode}
-                                      >
-                                          {e}
-                                      </C.BordersButton>
-                                  ))
-                                : "Unknow"}
-                        </b>
-                    </span>
-                </C.BorderCountriesList>
-            </C.InfoContent>
-        </C.MainConteiner>
+        <>
+            {" "}
+            <C.MainConteiner darkMode={darkMode} className="animeBottom">
+                <C.BackButton onClick={() => navigate(-1)} darkMode={darkMode}>Back</C.BackButton>
+                <C.Flag darkMode={darkMode} background={background} />
+                <C.InfoContent>
+                    <h4>{countryName}</h4>
+                    <C.DataList>
+                        <ul>
+                            <ListItem
+                                listItem={"Native name"}
+                                value={nativeName}
+                            />
+                            <ListItem
+                                listItem={"Population"}
+                                value={population}
+                            />
+                            <ListItem listItem={"Region"} value={region} />
+                            <ListItem
+                                listItem={"Sub Region"}
+                                value={subregion}
+                            />
+                            <ListItem listItem={"Capital"} value={capital} />
+                        </ul>
+                        <ul>
+                            <ListItem
+                                listItem={"Top Level Domain"}
+                                value={tld}
+                            />
+                            <ListItem
+                                listItem={"Currencies"}
+                                value={currenciesString}
+                            />
+                            <ListItem
+                                listItem={"Languages"}
+                                value={languages}
+                            />
+                        </ul>
+                    </C.DataList>
+                    <C.BorderCountriesList>
+                        <span>
+                            <b>
+                                <span className="span_block">
+                                    Border Countries:{" "}
+                                </span>
+                                {bordersCountries.length
+                                    ? bordersCountries.map((e, i) => (
+                                          <C.BordersButton
+                                              onClick={() =>
+                                                  navigate(
+                                                      `/country/${borders[i]}`
+                                                  )
+                                              }
+                                              key={i}
+                                              darkMode={darkMode}
+                                          >
+                                              {e}
+                                          </C.BordersButton>
+                                      ))
+                                    : "Unknow"}
+                            </b>
+                        </span>
+                    </C.BorderCountriesList>
+                </C.InfoContent>
+            </C.MainConteiner>
+        </>
     );
 };
 

@@ -15,6 +15,8 @@ const Country = () => {
     const api = "https://restcountries.com/v3.1/alpha/";
 
     useEffect(() => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
         async function fetchCountry(api) {
             try {
                 setLoading(true);
@@ -33,7 +35,7 @@ const Country = () => {
             }
         }
         fetchCountry(api + code);
-    }, []);
+    }, [code]);
 
     return (
         <C.Main darkMode={darkMode}>

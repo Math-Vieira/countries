@@ -4,7 +4,7 @@ import SearchInput from "../SearchInput";
 import Select from "../Select";
 import * as S from "./styles";
 
-const SearchBar = ({ setCountriesFiltered, countries }) => {
+const SearchBar = ({ setCountriesFiltered, countries, loading }) => {
     const [filterByString, setFilterByString] = useState("");
     const [filterByRegion, setFilterByRegion] = useState(-1);
     const { regions } = useContext(DataContext);
@@ -50,6 +50,7 @@ const SearchBar = ({ setCountriesFiltered, countries }) => {
                 placeHolder={"Search for a country..."}
                 value={filterByString}
                 setValue={setFilterByString}
+                disabled = {loading ? true : false}
             />
             <Select
                 waitingMessage={"Wait for the list..."}

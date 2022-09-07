@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import * as H from "./styles";
 import { DataContext } from "../../context";
 import SearchBar from "../../components/SearchBar";
@@ -13,10 +13,16 @@ const Home = () => {
 
     const showedCountries = countriesFiltered ? countriesFiltered : countries;
 
+    useEffect(() => {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }, []);
+
     return (
         <H.Main darkMode={darkMode}>
             <div className="centralizer">
                 <SearchBar
+                    loading={loading}
                     countries={countries}
                     setCountriesFiltered={setCountriesFiltered}
                 />

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const MainConteiner = styled.div`
+    position: relative;
     width: 100%;
     min-height: 10px;
     display: grid;
@@ -22,7 +23,10 @@ export const Flag = styled.div`
     background-position: center center;
     box-shadow: ${(props) => (props.darkMode ? "none" : "0px 1px 5px #888888")};
     @media (max-width: 900px) {
-        height: 500px;
+        min-height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        margin-top: 50px;
     }
 `;
 
@@ -59,7 +63,6 @@ export const BorderCountriesList = styled.div`
 `;
 
 export const BordersButton = styled.button`
-    background-color: red;
     border-radius: 4px;
     padding: 3px 3px;
     border: none;
@@ -73,4 +76,28 @@ export const BordersButton = styled.button`
     min-width: 50px;
     transition: ease 0.3s;
     cursor: pointer;
+`;
+
+export const BackButton = styled.button`
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    margin: 5px 10px;
+    color: ${(props) => (props.darkMode ? "white" : "hsl(209, 23%, 22%)")};
+    box-shadow: ${(props) =>
+        props.darkMode ? "" : "1px 1px 3px hsl(0, 0%, 52%)"};
+    background-color: ${(props) =>
+        props.darkMode ? "hsl(209, 23%, 22%)" : "white"};
+    min-width: 50px;
+    transition: ease 0.3s;
+    cursor: pointer;
+    position: absolute;
+    min-width: 150px;
+    font-weight: bolder;
+    top: -100px;
+    left: -10px;
+    @media (max-width: 900px) {
+        top: -15px;
+    }
 `;
