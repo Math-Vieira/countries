@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const MainConteiner = styled.div`
-    position: relative;
     width: 100%;
     min-height: 10px;
     display: grid;
@@ -83,7 +82,7 @@ export const BackButton = styled.button`
     padding: 10px 20px;
     border: none;
     outline: none;
-    margin: 5px 10px;
+    margin-bottom: 20px;
     color: ${(props) => (props.darkMode ? "white" : "hsl(209, 23%, 22%)")};
     box-shadow: ${(props) =>
         props.darkMode ? "" : "1px 1px 3px hsl(0, 0%, 52%)"};
@@ -92,7 +91,6 @@ export const BackButton = styled.button`
     min-width: 50px;
     transition: ease 0.3s;
     cursor: pointer;
-    position: absolute;
     min-width: 150px;
     font-weight: bolder;
     top: -100px;

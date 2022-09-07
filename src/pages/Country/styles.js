@@ -13,10 +13,10 @@ export const ContentConteiner = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    /* @media (max-width: 1000px) {
+    @media (max-width: 1000px) {
         grid-template-columns: repeat(3, 1fr);
     }
     @media (max-width: 800px) {
         grid-template-columns: repeat(2, 1fr);
-    } */
+    }
 `;

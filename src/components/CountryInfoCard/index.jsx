@@ -39,10 +39,16 @@ const CountryInfoCard = ({
     }, []);
 
     return (
-        <>
+        <div>
             {" "}
+            <C.BackButton
+                className="animeBottom"
+                onClick={() => navigate(-1)}
+                darkMode={darkMode}
+            >
+                Back
+            </C.BackButton>
             <C.MainConteiner darkMode={darkMode} className="animeBottom">
-                <C.BackButton onClick={() => navigate(-1)} darkMode={darkMode}>Back</C.BackButton>
                 <C.Flag darkMode={darkMode} background={background} />
                 <C.InfoContent>
                     <h4>{countryName}</h4>
@@ -104,7 +110,7 @@ const CountryInfoCard = ({
                     </C.BorderCountriesList>
                 </C.InfoContent>
             </C.MainConteiner>
-        </>
+        </div>
     );
 };
 

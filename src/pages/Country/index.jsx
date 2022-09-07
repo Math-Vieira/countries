@@ -5,6 +5,7 @@ import Error from "../../components/Error";
 import * as C from "./styles";
 import LoadingElement from "../../components/LoadingElement";
 import CountryInfoCard from "../../components/CountryInfoCard";
+import Head from "../../helper/Head";
 
 const Country = () => {
     const [country, setCountry] = useState(null);
@@ -38,39 +39,46 @@ const Country = () => {
     }, [code]);
 
     return (
-        <C.Main darkMode={darkMode}>
-            <C.ContentConteiner className="centralizer">
-                {loading ? (
-                    <LoadingElement />
-                ) : error ? (
-                    <Error error={error} />
-                ) : country ? (
-                    <CountryInfoCard
-                        nativeName={country.name.official}
-                        background={country.flags.svg}
-                        countryName={country.name.common}
-                        population={country.population}
-                        region={country.region}
-                        subregion={country.subregion}
-                        capital={
-                            country.capital ? country.capital[0] : "Unknow"
-                        }
-                        tld={country.tld ? country.tld[0] : "Unknow"}
-                        currencies={
-                            country.currencies ? country.currencies : "Unknow"
-                        }
-                        languages={
-                            country.languages
-                                ? Object.values(country.languages).join(", ")
-                                : "Unknow"
-                        }
-                        borders={country.borders ? country.borders : ""}
-                    />
-                ) : (
-                    ""
-                )}
-            </C.ContentConteiner>
-        </C.Main>
+        <>
+            <Head title={`Countries | ${country ? country.name.common: '...'}`} />
+            <C.Main darkMode={darkMode}>
+                <C.ContentConteiner className="centralizer">
+                    {loading ? (
+                        <LoadingElement />
+                    ) : error ? (
+                        <Error error={error} />
+                    ) : country ? (
+                        <CountryInfoCard
+                            nativeName={country.name.official}
+                            background={country.flags.svg}
+                            countryName={country.name.common}
+                            population={country.population}
+                            region={country.region}
+                            subregion={country.subregion}
+                            capital={
+                                country.capital ? country.capital[0] : "Unknow"
+                            }
+                            tld={country.tld ? country.tld[0] : "Unknow"}
+                            currencies={
+                                country.currencies
+                                    ? country.currencies
+                                    : "Unknow"
+                            }
+                            languages={
+                                country.languages
+                                    ? Object.values(country.languages).join(
+                                          ", "
+                                      )
+                                    : "Unknow"
+                            }
+                            borders={country.borders ? country.borders : ""}
+                        />
+                    ) : (
+                        ""
+                    )}
+                </C.ContentConteiner>
+            </C.Main>
+        </>
     );
 };
 
