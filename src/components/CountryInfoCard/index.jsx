@@ -39,7 +39,7 @@ const CountryInfoCard = ({
     }, []);
 
     return (
-        <div>
+        <div style={{width:'100%'}}>
             {" "}
             <C.BackButton
                 className="animeBottom"

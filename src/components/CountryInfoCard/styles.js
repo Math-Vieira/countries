@@ -25,7 +25,7 @@ export const Flag = styled.div`
         min-height: 300px;
         background-size: contain;
         background-repeat: no-repeat;
-        margin-top: 50px;
+        margin: 0;
     }
 `;
 
@@ -96,6 +96,6 @@ export const BackButton = styled.button`
     top: -100px;
     left: -10px;
     @media (max-width: 900px) {
-        top: -15px;
+        margin: 35px 0 15px 0;
     }
 `;
