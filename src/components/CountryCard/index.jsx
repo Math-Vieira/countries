@@ -10,8 +10,8 @@ const CountryCard = ({ background, name, population, region, capital }) => {
             <C.Info darkMode={darkMode}>
                 <h4>{name}</h4>
                 <p><b>Population: </b>{population}</p>
-                <p><b>Pegion: </b>{region}</p>
-                <p><b>Papital: </b>{capital}</p>
+                <p><b>Region: </b>{region}</p>
+                <p><b>Capital: </b>{capital}</p>
             </C.Info>
         </C.CountryCard>
     );

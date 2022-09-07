@@ -17,12 +17,13 @@ export const HeaderContent = styled.div`
     justify-content: space-between;
     align-items: center;
     z-index: 1;
-    & h1 {
+    & a h1 {
         font-weight: 1000;
         font-size: 1.5rem;
         padding: 8px 0;
         color : ${props => props.darkMode ? 'white' :'color: hsl(200, 15%, 8%)'};
         transition: ease 0.3s;
+        cursor: pointer;
     }
 
     & p {

@@ -25,3 +25,12 @@
         transform: initial;
     }
 }
+
+a {
+    text-decoration: none;
+    color: hsl(200, 15%, 8%);
+}
+
+li {
+    list-style: none;
+}

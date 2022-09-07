@@ -5,6 +5,7 @@ import SearchBar from "../../components/SearchBar";
 import CountryCard from "../../components/CountryCard";
 import LoadingElement from "../../components/LoadingElement";
 import Error from "../../components/Error";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
     const { darkMode, countries, loading, error } = useContext(DataContext);
@@ -32,14 +33,20 @@ const Home = () => {
                                 return 0;
                             })
                             .map((e) => (
-                                <CountryCard
-                                    name = {e.name.common}
+                                <NavLink
+                                    to={`/country/${e.cca2}`}
                                     key={e.name.common}
-                                    background={e.flags.png}
-                                    population = {e.population}
-                                    region = {e.region}
-                                    capital = {e.capital ? e.capital[0] : 'Unknow'}
-                                />
+                                >
+                                    <CountryCard
+                                        name={e.name.common}
+                                        background={e.flags.svg}
+                                        population={e.population}
+                                        region={e.region}
+                                        capital={
+                                            e.capital ? e.capital[0] : "Unknow"
+                                        }
+                                    />
+                                </NavLink>
                             ))}
                     </H.CardConteiner>
                 ) : (

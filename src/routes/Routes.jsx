@@ -14,7 +14,7 @@ const RoutesApp = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/country/:id" element={<Country />} />
+                    <Route path="country/:code" element={<Country />} />
                     <Route path="*" element={<NotFound />} />
                 </Routes>
                 <Footer />

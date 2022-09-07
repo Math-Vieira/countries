@@ -21,7 +21,6 @@ const Context = ({ children }) => {
                 const json = await response.json();
 
                 setRegions([...new Set(json.map((e) => e.region))]);
-                console.log(json);
                 setCountries(json);
             } catch (err) {
                 setError(err.message);

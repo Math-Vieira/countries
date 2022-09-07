@@ -41,7 +41,6 @@ const SearchBar = ({ setCountriesFiltered, countries }) => {
             );
         } else {
             setCountriesFiltered(countries);
-            console.log("quarta");
         }
     }, [filterByString, filterByRegion]);
 

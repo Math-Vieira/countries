@@ -10,6 +10,9 @@ export const CountryCard = styled.div`
         props.darkMode ? "" : "0px 0px 4px hsl(0, 0%, 52%)"};
     transition: ease 0.3s;
     cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
 `;
 export const Flag = styled.div`
     height: 50%;
